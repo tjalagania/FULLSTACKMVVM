@@ -18,4 +18,8 @@
     <ProjectReference Include="..\SimpleTracer.EntityFramework\SimpleTracer.EntityFramework.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>
