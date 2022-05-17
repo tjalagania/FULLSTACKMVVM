@@ -1,10 +1,14 @@
-﻿using System;
+﻿using FULLSTACKMVVM.ViewModels;
+using SimpleTrader.Domain.Models;
+using SimpleTrader.Financy.Services;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+
 
 namespace FULLSTACKMVVM
 {
@@ -13,9 +17,11 @@ namespace FULLSTACKMVVM
     /// </summary>
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
+        protected override async void OnStartup(StartupEventArgs e)
         {
+          
             MainWindow mw = new MainWindow();
+            mw.DataContext = new MainViewModel();
             mw.Show();
             base.OnStartup(e);
         }

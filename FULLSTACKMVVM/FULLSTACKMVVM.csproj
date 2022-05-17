@@ -16,10 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SimpleTracer.EntityFramework\SimpleTracer.EntityFramework.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\" />
+    <ProjectReference Include="..\SimpleTrader.Financy\SimpleTrader.Financy.csproj" />
   </ItemGroup>
 
 </Project>

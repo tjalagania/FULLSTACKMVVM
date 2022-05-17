@@ -5,9 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FULLSTACKMVVM"
         xmlns:control="clr-namespace:FULLSTACKMVVM.Controlls"
+        xmlns:navigator="clr-namespace:FULLSTACKMVVM.State.Navigation"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <control:NavigationBar />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <control:NavigationBar Grid.Row="0" DataContext="{Binding Navigator}" />
+        <ContentControl Content="{Binding Navigator.CurrentViewModel }" Grid.Row="1" />
     </Grid>
 </Window>

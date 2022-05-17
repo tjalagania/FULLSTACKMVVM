@@ -2,12 +2,24 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:FULLSTACKMVVM"
+             xmlns:view="clr-namespace:FULLSTACKMVVM.Views"
+             xmlns:vmodel="clr-namespace:FULLSTACKMVVM.ViewModels"
              >
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Styles/Common.xaml" />
+                <ResourceDictionary Source="/Styles/NavigationBar.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type vmodel:HomeViewModel}">
+                <view:HomeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmodel:PortfolioViewModel}">
+                <view:ProtfolioView />
+            </DataTemplate>
         </ResourceDictionary>
+
+        
     </Application.Resources>
 </Application>

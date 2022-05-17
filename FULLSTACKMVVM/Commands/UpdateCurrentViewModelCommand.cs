@@ -1,5 +1,6 @@
 ﻿using FULLSTACKMVVM.State.Navigation;
 using FULLSTACKMVVM.ViewModels;
+using SimpleTrader.Financy.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,14 +33,14 @@ namespace FULLSTACKMVVM.Commands
                 switch (viewType)
                 {
                     case ViewType.Home:
-                        _navigator.CurrentViewModel = new HomeViewModel();
+                        _navigator.CurrentViewModel = new HomeViewModel(StatementViewModel.LoadStatementViewModel(new StatementServices()));
                         break;
                     case ViewType.Protfolio:
                         _navigator.CurrentViewModel = new PortfolioViewModel();
                         break;
                 }
             }
-            throw new NotImplementedException();
+            
         }
     }
 }

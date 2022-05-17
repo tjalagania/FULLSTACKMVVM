@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FULLSTACKMVVM.Controlls"
+             xmlns:navigation="clr-namespace:FULLSTACKMVVM.State.Navigation"
+            
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -11,7 +13,10 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" Text="Simple Trader" Background="{StaticResource BrushesPrimary1}" />
+        <TextBlock Grid.Row="0" 
+                   Padding="10"
+                   FontSize="26"
+                   Text="Simple Trader" Background="{StaticResource BrushesPrimary1}" />
         <Grid Grid.Row="1" Background="{StaticResource BrushesPrimary2}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -20,10 +25,17 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <RadioButton Grid.Column="0" Content="Home" />
-            <RadioButton Grid.Column="1" Content="Protfolio"/>
-            <RadioButton Grid.Column="2" Content="Buy"/>
-            <RadioButton Grid.Column="3" Content="Sell" />
+            <RadioButton 
+                Style="{StaticResource Navigation}"
+               
+                HorizontalAlignment="Center"
+                Grid.Column="0" 
+                Content="Home" 
+                Command="{Binding UpdateCurrentViewModel}" 
+                CommandParameter="{x:Static navigation:ViewType.Home}" />
+            <RadioButton Style="{StaticResource Navigation}" Grid.Column="1" Content="Protfolio" Command="{Binding UpdateCurrentViewModel}" CommandParameter="{x:Static navigation:ViewType.Protfolio}"/>
+            <RadioButton Grid.Column="2" Content="Buy" Style="{StaticResource Navigation}"/>
+            <RadioButton Grid.Column="3" Content="Sell" Style="{StaticResource Navigation}"/>
         </Grid>
     </Grid>
 </UserControl>
